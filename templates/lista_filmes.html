@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/estilo.css">
+        <title>Filmes</title>
+    </head>
+    <body class="lista">
+        <header>
+            <h1 class="title">FILMES</h1>
+        </header>
+
+        <section>
+          <a href="/adicionar_filme" class="adicionar">Adicionar filme</a>
+        </section>
+
+        {% for filme in filmes %}
+    <div class="filmes">
+        <p class="result">Título: {{ filme[1] }}</p>
+        <p class="result">Data: {{ filme[2] }}</p>
+        <p class="result">Gênero: {{ filme[3] }}</p>
+
+        <button class="button"> <a href="/editar_filme/{{filme[0]}}" class="link">EDITAR</a></button>
+
+        <button class="button"> <a href="/apagar_filme/{{filme[0]}}" class="link">EXCLUIR</a> </button>
+    </div>
+        {% endfor %}
+
+    </body>
+</html>
